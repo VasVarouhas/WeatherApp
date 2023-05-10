@@ -6,7 +6,7 @@ body {
     padding: 0;
   }
 #weather{
-background-color: rgb(60, 165, 12);
+background-color: rgb(62, 123, 183);
 padding: 1vw;
 display: flex;
 flex-direction: row;
@@ -17,15 +17,16 @@ height: 100vh;
 
 }
 #currentWeather{
-background-color: rgba(172, 255, 47, 0.399);
+background-color: rgba(19, 176, 58, 0.515);
 
 margin:0.2vw;
 flex: 1 0 calc(33.33% - 1vw); /* Subtract 10 pixels of margin */
 height: 100%;
 border-radius: 20%;
-display:block;
-justify-self: center;
-align-self: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
 }
 #weatherAtThreeHours{
 background-color: rgba(74, 144, 74, 0.392);
@@ -34,8 +35,10 @@ margin:0.2vw;
 flex: 1 0 calc(33.33% - 1vw); /* Subtract 10 pixels of margin */
 height: 100%;
 border-radius: 20%;
-display: block;
-
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
 }
 #weatherAtSixHours{
 background-color: rgba(38, 182, 129, 0.384);
@@ -43,6 +46,9 @@ margin:0.2vw;
 flex: 1 0 calc(33.33% - 1vw); /* Subtract 10 pixels of margin */
 height: 100%;
 border-radius: 20%;
-display: block;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-evenly;
 
 }

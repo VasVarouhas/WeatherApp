@@ -17,7 +17,7 @@ navigator.geolocation.getCurrentPosition((position) => {
       const windDirection = data.wind.deg;
       document.getElementById("currentWeather").innerHTML = 
       
-      ` <h2>Now :</h2>
+      ` <h2>Weather live :</h2>
       <p>Temperature: ${temperature} &#8451;</p>
       <p>Clouds: ${clouds} %</p>
       <p>Wind speed: ${windSpeed} m/s</p>

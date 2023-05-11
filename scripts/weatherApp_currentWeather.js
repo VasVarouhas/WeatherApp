@@ -60,7 +60,7 @@ navigator.geolocation.getCurrentPosition((position) => {
       const time = now.toLocaleTimeString();
       // display weather information with cloud icon and NESW wind direction
       document.getElementById("currentWeather").innerHTML =
-      ` <h2>Weather live :</h2>
+      ` <h2>Weather live </h2>
       <p>${date} ${time}</p>
       <p><span class="cloud-icon">${cloudIcon}</span></p>
       <p>Temperature: ${temperature}°C</p>

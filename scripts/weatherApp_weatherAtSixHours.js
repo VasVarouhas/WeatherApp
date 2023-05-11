@@ -15,11 +15,23 @@ function success(position) {
       const clouds = sixHourWeather.clouds.all;
       const windSpeed = sixHourWeather.wind.speed;
       const windDirection = sixHourWeather.wind.deg;
+      let cloudIcon = '';
+
+      // check cloudiness percentage and display corresponding icon
+      if (clouds < 25) {
+        cloudIcon = '☀️'; // sunny
+      } else if (clouds < 50) {
+        cloudIcon = '⛅️'; // partly cloudy
+      } else if (clouds < 75) {
+        cloudIcon = '🌥️'; // mostly cloudy
+      } else {
+        cloudIcon = '☁️'; // cloudy
+      }
 
       const weatherAtSixHoursHTML = `
         <h2>in 6 Hours :</h2>
         <p>Temperature: ${temperature}°C</p>
-        <p>Clouds: ${clouds}%</p>
+        <p><span class="cloud-icon">${cloudIcon}</span></p>
         <p>Wind Speed: ${windSpeed} m/s</p>
         <p>Wind Direction: ${windDirection}°</p>
       `;

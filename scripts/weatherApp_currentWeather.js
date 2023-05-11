@@ -5,7 +5,7 @@ const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?appid=${apiK
 navigator.geolocation.getCurrentPosition((position) => {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
-  
+
   // make API request to get current weather
   const url = `${weatherUrl}&lat=${lat}&lon=${lon}&units=metric`;
   fetch(url)
@@ -15,13 +15,26 @@ navigator.geolocation.getCurrentPosition((position) => {
       const clouds = data.clouds.all;
       const windSpeed = data.wind.speed;
       const windDirection = data.wind.deg;
-      document.getElementById("currentWeather").innerHTML = 
-      
+      let cloudIcon = '';
+
+      // check cloudiness percentage and display corresponding icon
+      if (clouds < 25) {
+        cloudIcon = '☀️'; // sunny
+      } else if (clouds < 50) {
+        cloudIcon = '⛅️'; // partly cloudy
+      } else if (clouds < 75) {
+        cloudIcon = '🌥️'; // mostly cloudy
+      } else {
+        cloudIcon = '☁️'; // cloudy
+      }
+
+      // display weather information with cloud icon
+      document.getElementById("currentWeather").innerHTML =
       ` <h2>Weather live :</h2>
-      <p>Temperature: ${temperature} &#8451;</p>
-      <p>Clouds: ${clouds} %</p>
-      <p>Wind speed: ${windSpeed} m/s</p>
-      <p>Wind direction: ${windDirection} &deg;</p>`;
+        <p>Temperature: ${temperature} &#8451;</p>
+        <p> <span class="cloud-icon">${cloudIcon}</span></p>
+        <p>Wind speed: ${windSpeed} m/s</p>
+        <p>Wind direction: ${windDirection} &deg;</p>`;
     })
     .catch(error => {
       console.log(error);

@@ -16,11 +16,23 @@ const url = `https://api.openweathermap.org/data/2.5/forecast?appid=${api_key}&u
       const clouds = threeHourWeather.clouds.all;
       const windSpeed = threeHourWeather.wind.speed;
       const windDirection = threeHourWeather.wind.deg;
+      let cloudIcon = '';
+
+      // check cloudiness percentage and display corresponding icon
+      if (clouds < 25) {
+        cloudIcon = '☀️'; // sunny
+      } else if (clouds < 50) {
+        cloudIcon = '⛅️'; // partly cloudy
+      } else if (clouds < 75) {
+        cloudIcon = '🌥️'; // mostly cloudy
+      } else {
+        cloudIcon = '☁️'; // cloudy
+      }
 
       const weatherAtThreeHoursHTML = `
         <h2>in 3 Hours :</h2>
         <p>Temperature: ${temperature}°C</p>
-        <p>Clouds: ${clouds}%</p>
+        <p><span class="cloud-icon">${cloudIcon}</span></p>
         <p>Wind Speed: ${windSpeed} m/s</p>
         <p>Wind Direction: ${windDirection}°</p>
       `;

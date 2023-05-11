@@ -5,17 +5,20 @@ body {
     margin: 0;
     padding: 0;
   }
-#weather{
-background-color: rgb(62, 123, 183);
-padding: 1vw;
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-items: center;
-width: 100vw;
-height: 100vh;
-
-}
+  #weather {
+    background-color: rgb(62, 123, 183);
+    padding: 1vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.2em;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+  }
+  
 #currentWeather{
 background-color: rgba(19, 176, 58, 0.515);
 

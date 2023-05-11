@@ -6,7 +6,7 @@ body {
     padding: 0;
   }
   #weather {
-    background-color: rgb(62, 123, 183);
+    background-color: rgb(62, 183, 157);
     padding: 1vw;
     display: flex;
     flex-direction: row;
@@ -14,7 +14,7 @@ body {
     justify-items: center;
     width: 100vw;
     height: 100vh;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 600;
     font-family: "Open Sans", sans-serif;
   }
@@ -53,12 +53,12 @@ body {
   }
   
   #weatherAtThreeHours:hover {
-    background-color: rgba(74, 144, 74, 0.8);
+    background-color: rgb(46, 180, 176);
     box-shadow: 0px 0px 4vw rgba(0, 0, 0, 0.5);
   }
   
   #weatherAtSixHours {
-    background-color: rgba(38, 182, 129, 0.7);
+    background-color: rgba(47, 116, 142, 0.636);
     margin: 0.2vw;
     flex: 1 0 calc(33.33% - 1vw);
     height: 100%;
@@ -72,7 +72,7 @@ body {
   }
   
   #weatherAtSixHours:hover {
-    background-color: rgba(38, 182, 129, 1);
+    background-color: rgb(43, 122, 233);
     box-shadow: 0px 0px 4vw rgba(0, 0, 0, 0.5);
   }
   

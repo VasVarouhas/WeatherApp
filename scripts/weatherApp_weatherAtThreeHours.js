@@ -55,7 +55,7 @@ function success(position) {
       const formattedTime = threeHoursLater.toLocaleString();
 
       const weatherAtThreeHoursHTML = `
-        <h2>At 3 Hours </h2>
+        <h2>After three hours</h2>
         <p>${formattedTime}</p>
         <p><span class="cloud-icon">${cloudIcon}</span></p>
         <p>Temperature: ${temperature}°C</p>

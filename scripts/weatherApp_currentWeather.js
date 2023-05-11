@@ -19,7 +19,10 @@ navigator.geolocation.getCurrentPosition((position) => {
       const rain = (data.rain && data.rain["1h"]) || 0;
       let cloudIcon = '';
       let windDirection = '';
-
+  // get current date and time
+  const now = new Date();
+  const date = now.toLocaleDateString();
+  const time = now.toLocaleTimeString();
       // check cloudiness percentage and display corresponding icon
       if (clouds < 25) {
         cloudIcon = '☀️'; // sunny
@@ -54,10 +57,7 @@ navigator.geolocation.getCurrentPosition((position) => {
         windDirection = 'unknown';
       }
 
-      // get current date and time
-      const now = new Date();
-      const date = now.toLocaleDateString();
-      const time = now.toLocaleTimeString();
+    
       // display weather information with cloud icon and NESW wind direction
       document.getElementById("currentWeather").innerHTML =
       ` <h2>Weather live </h2>

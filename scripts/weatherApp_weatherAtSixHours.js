@@ -12,9 +12,11 @@ function success(position) {
     .then(data => {
       const sixHourWeather = data.list[2];
       const temperature = sixHourWeather.main.temp;
+      const humidity = sixHourWeather.main.humidity;
       const clouds = sixHourWeather.clouds.all;
       const windSpeed = sixHourWeather.wind.speed;
-      const windDirection = sixHourWeather.wind.deg;
+      const windDirection = getWindDirection(sixHourWeather.wind.deg);
+      const rain = (sixHourWeather.rain && sixHourWeather.rain["3h"]) ? sixHourWeather.rain["3h"] : 0;
       let cloudIcon = '';
 
       // check cloudiness percentage and display corresponding icon
@@ -28,13 +30,19 @@ function success(position) {
         cloudIcon = '☁️'; // cloudy
       }
 
+      const now = new Date();
+const sixHoursLater = new Date(now.getTime() + 6 * 60 * 60 * 1000);
+const formattedTime = sixHoursLater.toLocaleString();
+
       const weatherAtSixHoursHTML = `
         <h2>in 6 Hours :</h2>
-        <p>Temperature: ${temperature}°C</p>
+        <p>${formattedTime}</p>
         <p><span class="cloud-icon">${cloudIcon}</span></p>
-        <p>Wind Speed: ${windSpeed} m/s</p>
-        <p>Wind Direction: ${windDirection}°</p>
-      `;
+        <p>Temperature: ${temperature}°C</p>
+        <p>Wind : ${windDirection} , ${windSpeed} m/s</p>
+        <p>Rain: ${rain}mm</p>     
+        <p>Humidity: ${humidity}%</p>
+        `;
 
       const weatherAtSixHoursDiv = document.getElementById("weatherAtSixHours");
       weatherAtSixHoursDiv.innerHTML = weatherAtSixHoursHTML;
@@ -43,4 +51,10 @@ function success(position) {
 
 function error() {
   console.log("Unable to retrieve your location");
+}
+
+function getWindDirection(degrees) {
+  const val = Math.floor((degrees / 22.5) + 0.5);
+  const directions = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+  return directions[(val % 16)];
 }

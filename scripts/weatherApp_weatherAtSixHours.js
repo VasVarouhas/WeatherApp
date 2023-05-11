@@ -35,7 +35,7 @@ const sixHoursLater = new Date(now.getTime() + 6 * 60 * 60 * 1000);
 const formattedTime = sixHoursLater.toLocaleString();
 
       const weatherAtSixHoursHTML = `
-        <h2>in 6 Hours :</h2>
+        <h2>At 6 Hours :</h2>
         <p>${formattedTime}</p>
         <p><span class="cloud-icon">${cloudIcon}</span></p>
         <p>Temperature: ${temperature}°C</p>

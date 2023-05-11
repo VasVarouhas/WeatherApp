@@ -6,7 +6,7 @@ body {
     padding: 0;
   }
   #weather {
-    background-color: rgb(62, 183, 157);
+    background-color: rgba(19, 176, 58, 0.7);
     padding: 1vw;
     display: flex;
     flex-direction: row;
@@ -17,10 +17,31 @@ body {
     font-size: 1.1em;
     font-weight: 600;
     font-family: "Open Sans", sans-serif;
+    animation-name: colorTransition;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes colorTransition {
+    0% {
+      background-color: rgba(54, 189, 63, 0.855);
+    }
+    25% {
+      background-color: rgba(42, 152, 132, 0.855);
+    }
+    50% {
+      background-color: rgba(28, 132, 170, 0.835);
+    }
+    75% {
+      background-color: rgba(42, 152, 132, 0.855);
+    }
+    100% {
+      background-color: rgba(54, 189, 63, 0.855);
+    }
   }
   
   #currentWeather {
-    background-color: rgba(19, 176, 58, 0.7);
+    background-color: rgb(16, 146, 48);
     margin: 0.2vw;
     flex: 1 0 calc(33.33% - 1vw);
     height: 100%;
@@ -39,7 +60,7 @@ body {
   }
   
   #weatherAtThreeHours {
-    background-color: rgba(74, 144, 74, 0.392);
+    background-color: rgba(74, 144, 74, 0.63);
     margin: 0.2vw;
     flex: 1 0 calc(33.33% - 0.2vw); /* Subtract 2 pixels of margin */
     height: 100%;
@@ -53,7 +74,7 @@ body {
   }
   
   #weatherAtThreeHours:hover {
-    background-color: rgb(46, 180, 176);
+    background-color: rgba(100, 195, 100, 0.814);
     box-shadow: 0px 0px 4vw rgba(0, 0, 0, 0.5);
   }
   
@@ -72,7 +93,7 @@ body {
   }
   
   #weatherAtSixHours:hover {
-    background-color: rgb(43, 122, 233);
+    background-color: rgba(66, 157, 191, 0.815);
     box-shadow: 0px 0px 4vw rgba(0, 0, 0, 0.5);
   }
   

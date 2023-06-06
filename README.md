@@ -6,3 +6,7 @@
 - ## Working properly should look like this :
 
 
+
+
+
+![WeatherApp](https://github.com/VasVarouhas/WeatherApp/assets/131968265/109c8cc2-8346-4ce4-b7d3-b3eb03306571)
